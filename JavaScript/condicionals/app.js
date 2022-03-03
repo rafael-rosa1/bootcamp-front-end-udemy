@@ -35,17 +35,45 @@
 // }
 
 
-let isValid = false;
-while (isValid === false) {
-    let password = prompt("Enter a password:");
-    if (password.length >= 6) {
-        if (password.indexOf(" ") === -1) {
-            console.log("PASSWORD IS VALID!");
-            isValid = true;
-        } else {
-            console.log("DONT PUT BLANK SPACES");
-        }
-    } else {
-        console.log("PASSWORD IS TOO SHORT. MINIMUM 6 CHARACTERS");
-    }
+// let isValid = false;
+// while (isValid === false) {
+//     let password = prompt("Enter a password:");
+//     if (password.length >= 6) {
+//         if (password.indexOf(" ") === -1) {
+//             console.log("PASSWORD IS VALID!");
+//             isValid = true;
+//         } else {
+//             console.log("DONT PUT BLANK SPACES");
+//         }
+//     } else {
+//         console.log("PASSWORD IS TOO SHORT. MINIMUM 6 CHARACTERS");
+//     }
+// }
+
+//SWITCH
+
+const dayOfTheWeek = 7;
+
+switch(dayOfTheWeek) {
+    case 1:
+        console.log("MONDAY");
+        break;
+    case 2:
+        console.log("TUESDAY");
+        break;
+    case 3: 
+        console.log("WEDNESDAY");
+        break;
+    case 4:
+        console.log("THURSDAY");
+        break;
+    case 5:
+        console.log("FRIDAY");
+        break;
+    case 6:
+    case 7:
+        console.log("WEEKEND");
+        break;
+    default:
+        console.log("INVALID NUMBER");
 }

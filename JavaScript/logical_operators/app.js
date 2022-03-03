@@ -11,13 +11,23 @@
 // 18-65 $20
 // 65+ free
 
-const age = prompt("Enter your age");
-if(age >= 0 && age <= 5 || age > 65 && age < 100) {
-    console.log("Enter for free my friend.");
-} else if(age > 5 && age < 18) {
-    console.log("Kids pay half entry. Give me $10.")
-} else if(age >= 18 && age <= 65) {
-    console.log("Adults pay $20.")
-} else {
-    console.log("Invalid age")
+// const age = prompt("Enter your age");
+// if(age >= 0 && age <= 5 || age > 65 && age < 100) {
+//     console.log("Enter for free my friend.");
+// } else if(age > 5 && age < 18) {
+//     console.log("Kids pay half entry. Give me $10.")
+// } else if(age >= 18 && age <= 65) {
+//     console.log("Adults pay $20.")
+// } else {
+//     console.log("Invalid age")
+// }
+
+// const firstName = prompt("enter your first name");
+// if(!firstName) {
+//     firstName = prompt("try again!");
+// }
+
+const age = 5;
+if(!(age >= 0 && age <= 5 || age > 65 && age < 100)) {
+        console.log("You are note a baby or a senior.");
 }
