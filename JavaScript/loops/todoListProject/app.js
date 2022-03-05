@@ -1,5 +1,5 @@
 let command = prompt('What would you like to do?');
-let todoList = [];
+const todoList = [];
 
 while (command !== 'quit') {
     if (command === 'new') {
