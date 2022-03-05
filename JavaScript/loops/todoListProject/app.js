@@ -1,9 +1,3 @@
-// Todo List 
-// - 'new' - Add a Todo
-// - 'list' - list all todos
-// - 'delete' - remove specific todo
-// - 'quit' - quit app
-
 let command = prompt('What you would like to do?');
 let todoList = [];
 
