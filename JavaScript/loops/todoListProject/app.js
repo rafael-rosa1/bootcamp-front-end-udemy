@@ -1,4 +1,4 @@
-let command = prompt('What you would like to do?');
+let command = prompt('What would you like to do?');
 let todoList = [];
 
 while (command !== 'quit') {
