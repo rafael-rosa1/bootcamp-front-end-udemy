@@ -13,11 +13,12 @@ while (command !== 'quit') {
         }
         console.log('*********************');
     } else if (command === 'delete') {
-        let deleteIndex = prompt('Choose a todo to remove');
-        console.log(`${todoList[deleteIndex]} removed`);
-        todoList.splice(deleteIndex, 1);
-    } else {
-        command = prompt('What you would like to do?');
+        const deleteIndex = parseInt(prompt('Choose an index to remove it'));
+        if (!Number.isNaN(deleteIndex)) {
+            console.log(`${todoList.splice(deleteIndex, 1)} removed`);
+        } else {
+            console.log('Unknown index');
+        }
     }
     command = prompt('What you would like to do?');
 }
