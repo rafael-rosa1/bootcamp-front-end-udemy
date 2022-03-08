@@ -39,13 +39,9 @@ function repeat(msg, reps) {
     console.log(result);
 }
 
-// singSong();
-// singSong();
-// singSong();
-// singSong();
-// singSong();
-// singSong();
-// singSong();
-// singSong();
-// singSong();
-// singSong();
+function add(x, y) {
+    if (typeof x !== 'number' || typeof y !== 'number') {
+        return false;
+    }
+    return x + y;
+}
