@@ -18,3 +18,15 @@ const myMath = {
         return num ** 3;
     }
 }
+
+const cat = {
+    name: 'Zezinho',
+    color: 'grey',
+    breed: 'vira-lata',
+    meow() {
+        console.log('THIS IS:', this);
+        console.log(`${this.name} says MEOWWW`);
+    }
+}
+
+const meow2 = cat.meow;
