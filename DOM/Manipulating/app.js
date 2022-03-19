@@ -68,12 +68,30 @@ document.body.appendChild(newH3);
 const p = document.querySelector('p');
 p.append('i am new text ! yaaaaaayyyy!!', 'adding two things at the same time');
 
-const newB = document.createElement('b');
-newB.append('Hi!');
-p.prepend(newB);
+// const newB = document.createElement('b');
+// newB.append('Hi!');
+// p.prepend(newB);
 
 const newH2 = document.createElement('h2');
 newH2.append('New H2');
 h1.insertAdjacentElement('afterend', newH2);
 
 h1.after(newH3);
+
+//removing elements with removeChild()
+//need to use this method in the parent element to remove a child from it
+const firstLi = document.querySelector('li');
+const ul = firstLi.parentElement;
+ul.removeChild(firstLi);
+
+const b = document.querySelector('b');
+p.removeChild(b);
+
+//remove elements with remove()
+//remove the element that uses this method
+
+const img = document.querySelector('img');
+img.remove();
+
+
+
