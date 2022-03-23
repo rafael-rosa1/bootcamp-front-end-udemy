@@ -3,8 +3,8 @@ const player1Score = document.querySelector('#score1');
 const player2Score = document.querySelector('#score2');
 const buttons = document.querySelectorAll('button');
 
-var player1 = '0';
-var player2 = '0';
+let player1 = '0';
+let player2 = '0';
 
 for (let i = 0; i < 3; i++) {
 	if(i === 0) {
