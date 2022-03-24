@@ -32,6 +32,9 @@ winningScoreSelect.addEventListener('change', function(){
 resetButton.addEventListener('click', reset)
 
 function updateScore(player, opponent) {
+  if(winningScore - player.score === 1 && winningScore - opponent.score === 1) {
+    winningScore += 1;
+  }
   if(!isGameOver) {
     player.score++;
     if(player.score === winningScore) {
@@ -47,6 +50,7 @@ function updateScore(player, opponent) {
 
 function reset(){
   isGameOver = false;
+  winningScore = parseInt(winningScoreSelect.value);
   for(let p of [player1,player2]) {
     p.score = 0;
     p.display.textContent = 0;
