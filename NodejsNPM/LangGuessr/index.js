@@ -6,15 +6,15 @@ import { franc, francAll } from 'franc';
 var langs = require('langs');
 var colors = require('colors');
 
-const texto = process.argv[2];
+const input = process.argv[2];
 
-const encontraIdioma = async function(texto) {
+const findLanguage = async function(input) {
 	try {
-		let codigoIdioma = await franc(texto);
-		let idioma = await langs.where('3', codigoIdioma);
-		return console.log(idioma.name.green);
+		let languageCode = await franc(input);
+		let language = await langs.where('3', languageCode);
+		return console.log(language.name.green);
 	} catch (e) {
-		console.log('Texto invalido, tente novamente'.red);
+		console.log('Could not match a language. Try again with a larger sample'.red);
 	}
 };
-encontraIdioma(texto);
+findLanguage(input);
