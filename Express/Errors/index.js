@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
+const AppError = require('./AppError');
 
 app.use(morgan('dev'));
 app.use((req, res, next) => {
@@ -19,22 +20,10 @@ const verifyPassword = (req, res, next) => {
 	if (password === 'valentinaepepe') {
 		next();
 	}
+	throw new AppError('Password required!', 401);
 	// res.send('SORRY YOU NEED A PASSWORD');
-	throw new Error('Password required!');
+	// res.status(401);
 };
-// app.use((req, res, next) => {
-// 	console.log('This is my FIRST middleware');
-// 	return next(); //without next the code stops here, we dont see the second message on the console
-// 	console.log('This is my FIRST middleware - after calling next()');
-// });
-// app.use((req, res, next) => {
-// 	console.log('This is my SECOND middleware');
-// 	return next();
-// });
-// app.use((req, res, next) => {
-// 	console.log('This is my THIRD middleware');
-// 	return next();
-// });
 
 app.get('/', (req, res) => {
 	console.log(`REQUEST DATE: ${req.requestTime}`);
@@ -53,8 +42,24 @@ app.get('/secret', verifyPassword, (req, res) => {
 	res.send('SECRET: ELON MUSK IS BOLD');
 });
 
+app.get('/admin', (req, res) => {
+	throw new AppError('You are not an admin!', 403);
+});
+
 app.use((req, res) => {
 	res.status(404).send('NOT FOUND');
+});
+
+// app.use((err, req, res, next) => {
+// 	console.log('******************************');
+// 	console.log('*************ERROR************');
+// 	console.log('******************************');
+// 	next(err);
+// });
+
+app.use((err, req, res, next) => {
+	const { status = 500, message = 'SOMETHING WENT WRONG' } = err;
+	res.status(status).send(message);
 });
 
 app.listen(3000, () => {
