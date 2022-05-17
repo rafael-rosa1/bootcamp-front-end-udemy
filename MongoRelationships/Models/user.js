@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 mongoose.connect('mongodb://localhost:27017/relationshipDemo');
 
@@ -8,7 +9,7 @@ db.once('open', () => {
     console.log('Database connected');
 });
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     first: String,
     last: String,
     addresses: [
