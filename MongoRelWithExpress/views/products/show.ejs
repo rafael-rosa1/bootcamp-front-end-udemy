@@ -9,6 +9,7 @@
 <body>
   <h1><%= product.name %></h1>
   <ul>
+    <li>Farm: <a href="/farms/<%=product.farm._id%>"><%=product.farm.name%></a></li>
     <li>Price: $<%= product.price %></li>
     <li>Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a></li>
   </ul>
